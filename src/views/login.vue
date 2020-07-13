@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="content">
-      <h3>后台系统</h3>
+      <h2>短视频后台系统</h2>
       <el-form
         :model="loginForm"
         :rules="rules"
@@ -18,9 +18,6 @@
         <el-form-item>
           <el-button type="primary" @click="login(loginForm)">登录</el-button>
         </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="huoqu">获取</el-button>
-        </el-form-item>
       </el-form>
     </div>
 
@@ -32,8 +29,8 @@ export default {
   data () {
     return {
       loginForm: {
-        username: 'admin',
-        password: '123456'
+        username: '',
+        password: ''
 
       },
       info: '',
@@ -53,13 +50,7 @@ export default {
     }
   },
   methods: {
-    huoqu () {
-      this.$http.post('/v1/social/boutiques').then(res => {
-        console.log(res)
-      }).catch(err => {
-        console.log(err)
-      })
-    }
+
   }
 }
 </script>
@@ -95,6 +86,9 @@ body{
           margin-left: 0px !important;
         }
       }
+    }
+    .demo-ruleForm{
+      margin-top: 40px;
     }
   }
 }
